@@ -1,0 +1,83 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid blue;
+}
+h3{
+    text-align: center;
+}
+.bikeform{
+    max-width: 550px;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 10px rgba(0,0,0,0.65);
+}
+.input__fields .input,
+/* .input__fields select, */
+.textarea__field textarea{
+    width: 100%;
+    margin: 10px 0;
+    padding: 1em;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #c5ecfd;
+    color: #c5ecfd;
+}
+.input__fields select option{
+    color: black;
+    font-weight: bold;
+}
+.textarea__field textarea{
+    height: 150px;
+}
+.textarea__field button{
+    font-size: 1.5rem;
+    border-radius: 5em;
+    padding: .5em 1.1em;
+    background-color: aqua;
+    color: #ffffff;
+    font-weight: bold;
+    width: 60%;
+}
+
+.has-info{
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+}
+::-webkit-input-placeholder{
+    color: #c5ecfd;
+}
+
+::-moz-input-placeholder{
+    color: #c5ecfd;
+}
+::-ms-input-placeholder{
+    color: #c5ecfd;
+}
+@media (min-width: 550px){
+    .bikeform{
+        display: flex;
+        margin: 0 auto;
+        border: 2px solid black;
+    }
+    .input__fields,
+    .textarea__field{
+        width: 48%;
+    }
+    .textarea__field{
+        margin-left: 4%;
+    }
+
+
+}
+
