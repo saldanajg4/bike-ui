@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { BikeService } from 'src/app/services/bike.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [MessageService]
 })
 export class HomeComponent implements OnInit {
   models: string[] = [
@@ -17,7 +20,7 @@ export class HomeComponent implements OnInit {
   bikeform: FormGroup;
   validMessage: string = "";
 
-  constructor(private bikeSvc: BikeService) { }
+  constructor(private bikeSvc: BikeService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.bikeform = new FormGroup({
@@ -48,6 +51,9 @@ export class HomeComponent implements OnInit {
     } 
     else{
       this.validMessage = "Please fill out the form before submitting.";
+      // this.msgs = [];
+      // this.msgs.push({severity:'error', summary:'Error Message', detail:'Validation failed'});
+      this.messageService.add({severity:'error', summary:'Form Error ', detail:'Fill out all fields.'});
     }
     
   }

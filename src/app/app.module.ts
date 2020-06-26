@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PrimeNGModule } from './primeng.module';
 import { AppComponent } from './app.component';
 import { BikeService } from './services/bike.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +15,7 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
 
 @NgModule({
   declarations: [
+   
     AppComponent,
     AdminComponent,
     HomeComponent,
@@ -22,8 +25,11 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    PrimeNGModule,
     TableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [BikeService],
   bootstrap: [AppComponent]
