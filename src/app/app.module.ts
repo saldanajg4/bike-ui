@@ -12,6 +12,8 @@ import { TableModule } from 'primeng/table';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
     ReactiveFormsModule,
     
   ],
-  providers: [BikeService],
+  providers: [BikeService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
