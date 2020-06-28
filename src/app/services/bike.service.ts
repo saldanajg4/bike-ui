@@ -17,16 +17,19 @@ export class BikeService {
    * apis
    */
   getBikes(){
-    let token = localStorage.getItem('access_token');
-    return this.http.get('/forward/api/v1/bikes', 
-    {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)}
-    );
+    // let token = localStorage.getItem('access_token');
+    // return this.http.get('/forward/api/v1/bikes', 
+    // {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)}
+    // );
+    return this.http.get('/forward/api/v1/bikes', this.setAuthHeaders());
   }
 
   getBike(id: number){
-    let token = localStorage.getItem('access_token');
-    return this.http.get('/forward/api/v1/bikes/' + id,
-    {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)});
+    // let token = localStorage.getItem('access_token');
+    // return this.http.get('/forward/api/v1/bikes/' + id,
+    // {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)});
+
+    return this.http.get('/forward/api/v1/bikes/' + id, this.setAuthHeaders());
   }
 
   //this is public
